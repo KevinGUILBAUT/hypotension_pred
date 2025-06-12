@@ -1,3 +1,7 @@
+"""
+This script generates 10 new train/test splits and optimizes an XGBoost Classifier on each training set.
+"""
+
 from pathlib import Path
 import pandas as pd
 import numpy as np

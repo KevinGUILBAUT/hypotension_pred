@@ -1,3 +1,9 @@
+"""
+This script extracts trend features from physiological signals by applying linear regression over 
+multiple time-window scales (2, 6, and 20 time steps). It also includes categorical parameters.
+
+"""
+
 from tqdm import tqdm
 import numpy as np
 import os

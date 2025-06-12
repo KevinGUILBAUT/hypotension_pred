@@ -1,3 +1,7 @@
+"""
+This script optimizes an XGBoost Classifier using Optuna on the training set from `feature_extraction_pipeline.py`.
+"""
+
 from pathlib import Path
 
 import optuna
@@ -8,14 +12,12 @@ from hp_pred.experiments import objective_xgboost
 
 optuna.logging.set_verbosity(optuna.logging.WARNING)
 
-
-
-model_filename = "xgb_30_s_test_04_06.json"
+model_filename = "xgb_30_s_reg_holt_med.json"
 
 
 #Import the data already processed
-test = pd.read_parquet("data/features_extraction_test_categoricals/test.parquet")
-train = pd.read_parquet("data/features_extraction_test_categoricals/train.parquet")
+test = pd.read_parquet("data/features_extraction_integrated_2windows/test.parquet")
+train = pd.read_parquet("data/features_extraction_integrated_2windows/train.parquet")
 
 # control reproducibility
 rng_seed = 42

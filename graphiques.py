@@ -1,3 +1,7 @@
+"""
+This script generates the 'feature_extraction_pipeline.py' figure for a specific patient.
+"""
+
 import numpy as np
 import pandas as pd
 from sklearn.linear_model import LinearRegression

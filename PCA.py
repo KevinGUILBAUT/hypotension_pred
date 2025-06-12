@@ -1,3 +1,8 @@
+"""
+This script applies an ACP on a specific dataset.
+Currently, it's applied to the TSFEL-extracted features.
+"""
+
 import os
 import numpy as np
 import pandas as pd

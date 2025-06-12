@@ -1,3 +1,16 @@
+"""
+This script extracts features from physiological signals using a specific pipeline configuration.
+
+It is very similar to `feature_extraction_pipeline.py`, but includes additional handling for categorical parameters and missing (NaN) values.
+
+Pipeline steps:
+    1. Clean NaN values in raw signals
+    2. Raw regression features on drug-related signals
+    3. Holt exponential smoothing forecasts on physiological signals
+    4. Linear regression analysis on the Holt forecasts
+    5. Merge all features into a single dataset
+"""
+
 from tqdm import tqdm
 import numpy as np
 import os

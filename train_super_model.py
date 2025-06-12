@@ -1,3 +1,8 @@
+"""
+This script performs 11-fold cross-validated optimization of an XGBoost classifier using Optuna on the training set from `feature_extraction_pipeline.py`.  
+This classifier is referred to as SuperModelXGBoost in `src/hp_pred/supermodel.py`.
+"""
+
 from pathlib import Path
 import optuna
 import pandas as pd

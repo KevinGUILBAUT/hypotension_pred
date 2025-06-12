@@ -1,3 +1,8 @@
+"""
+This script builds a Stacking Classifier using optimized pre-trained models 
+(Random Forest, XGBoost, and Rotation Forest), and saves the final stacked model using Logistic Regression as the meta-learner.
+"""
+
 from pathlib import Path
 import pandas as pd
 import pickle

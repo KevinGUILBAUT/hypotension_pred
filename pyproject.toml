@@ -7,6 +7,7 @@ name = "hp_pred"
 authors = [
     { name = "Bob Aubouin--Pairault", email = "bob.aubouin-pairault@gipsa-lab.fr" },
     { name = "Mathias Réus", email = "mathias.reus@gipsa-lab.fr" },
+    { name = "Kevin Guilbaut", email = "kevin.guilbaut@uphf.fr"}
 ]
 description = "An hypertension predictor based on VitalDB data and ML methods."
 dependencies = [
@@ -25,6 +26,8 @@ dependencies = [
     "dask==2024.2.1",
     "imblearn==0.0",
     "pyarrow==19.0.0",
+    "statsmodels==0.14.4",
+    "tsfel==0.1.9",
 ]
 optional-dependencies = { "dev" = ["pytest==8.0.0", "black==24.2.0", "isort==5.13.2"] }
 requires-python = "~= 3.11"

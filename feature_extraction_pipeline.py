@@ -1,3 +1,13 @@
+"""
+This script extracts features from physiological signals using a specific pipeline configuration.
+
+Pipeline steps:
+    1. Extract raw regression features from drug-related signals.
+    2. Apply Holt's exponential smoothing to physiological signals for forecasting.
+    3. Perform linear regression analysis on the Holt forecasts.
+    4. Merge all extracted features into a single dataset.
+"""
+
 from tqdm import tqdm
 import numpy as np
 import os
