@@ -8,7 +8,7 @@ The original implementation was developed by Bob Aubouin. During a research inte
 Use a new virtual env and Python 3.11 (with pyenv) for maximal compatibility.
 
 ```bash
-git clone https://github.com/BobAubouin/hypotension_pred hp_pred
+git clone https://github.com/KevinGUILBAUT/hypotension_pred hp_pred
 cd hp_pred
 pip install .
 ```
@@ -18,7 +18,7 @@ pip install .
 In addition, you can add the optional build `dev`. So you will download the Python packages required to develop the project (unit test, linter, formatter).
 
 ```bash
-git clone https://github.com/BobAubouin/hypotension_pred hp_pred
+git clone https://github.com/KevinGUILBAUT/hypotension_pred hp_pred
 cd hp_pred
 pip install -e .[dev]
 ```
