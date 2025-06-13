@@ -1,7 +1,8 @@
 # Hypotension_pred
 This project provides a data-driven pipeline to predict intraoperative hypotension using physiological signals from the [VitalDB](https://vitaldb.net/) dataset.
 
-The original implementation was developed by Bob Aubouin. During a research internship, I extended and modified his codebase to explore various classifiers and feature extraction techniques. This repository contains the code corresponding to the most significant and conclusive results.
+The original implementation was developed by Bob Aubouin here(https://github.com/BobAubouin/hypotension_pred).
+During a research internship, I extended and modified his codebase to explore various classifiers and feature extraction techniques. This repository contains the code corresponding to the most significant and conclusive results.
 
 ## Installation
 
