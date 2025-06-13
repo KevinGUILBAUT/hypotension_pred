@@ -64,6 +64,54 @@ The results associated with our paper can be replicated using the version of the
 Results might slightly differ due to the randomness of the model.
 Note that the results associated with data from Grenoble Hospital can not be replicated as the data is not public.
 
+## Scripts Overview
+
+This project includes a set of Python scripts used for feature extraction, visualization, and model training on physiological signals. Below is a summary of each script's purpose.
+
+### Feature Extraction
+
+- `feature_extraction_pipeline.py`  
+  Extracts features from physiological signals using a 4-step pipeline:
+  1. Raw regression features from drug-related signals  
+  2. Holt's exponential smoothing for physiological forecasts  
+  3. Linear regression on smoothed forecasts  
+  4. Merging of all features into a unified dataset
+
+- `feature_extraction_pipeline_categorical.py`  
+  Variant of `feature_extraction_pipeline.py` that includes:
+  - Handling of categorical parameters  
+  - Cleaning of missing (NaN) values  
+  - Same pipeline with an added preprocessing step
+
+- `features_extraction_reg_raw_signal.py`  
+  Extracts trend-based features by applying linear regression over multiple time windows (2, 6, and 20 time steps). Also integrates categorical variables.
+
+- `features_extraction_tsfel.py`  
+  Uses the TSFEL library to extract statistical, temporal, and spectral features from physiological signals.
+
+### Visualization & Dimensionality Reduction
+
+- `graphiques.py`  
+  Generates a figure illustrating the output of `feature_extraction_pipeline.py` for a specific patient.
+
+- `PCA.py`  
+  Applies PCA to reduce the dimensionality of a given dataset. Currently applied to features extracted via TSFEL.
+
+### Model Training & Optimization
+
+- `stacking_model.py`  
+  Builds and saves a stacked ensemble classifier using pre-trained models (Random Forest, XGBoost, Rotation Forest), with Logistic Regression as the meta-learner.
+
+- `train_model_new_separation.py`  
+  Generates 10 randomized train/test splits and trains a new XGBoost classifier on each training set. Useful for robustness and generalization evaluation.
+
+- `train_super_model.py`  
+  Performs 11-fold cross-validated hyperparameter optimization of an XGBoost classifier using Optuna, based on features from `feature_extraction_pipeline.py`.  
+  The resulting model is referred to as `SuperModelXGBoost` and is implemented in `src/hp_pred/supermodel.py`.
+
+- `train_XGBoost_model.py`  
+  Optimizes a single XGBoost classifier using Optuna on the training set produced by `feature_extraction_pipeline.py`.
+
 ## Citation
 
 If you use this code in your research, please cite Bob Aubouin's paper.
